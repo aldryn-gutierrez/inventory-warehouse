@@ -1,4 +1,4 @@
-Installation:
+<b>Installation:</b>
 
 1] git clone https://github.com/aldryn-gutierrez/inventory-warehouse.git
 
@@ -8,12 +8,12 @@ Installation:
 
 4] Inside the .env file that you just created update this fields to your database credentials:
 
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=homestead
-DB_USERNAME=homestead
-DB_PASSWORD=secret
+DB_CONNECTION=mysql <br/>
+DB_HOST=127.0.0.1 <br/>
+DB_PORT=3306 <br/>
+DB_DATABASE=homestead <br/>
+DB_USERNAME=homestead <br/>
+DB_PASSWORD=secret <br/>
 
 5] Run in terminal: php artisan key:generate
 
@@ -31,7 +31,7 @@ This should seed some data in your tables
 
 This will give you a server to call the API
 
-Documentation
+<b>Documentation</b>
 
 [Create Inventory]
 
