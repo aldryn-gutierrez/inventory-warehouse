@@ -71,3 +71,5 @@ Response:<br/>
 200: Success <br/>
 
 
+<b>Database Diagram</b>
+<img src="https://preview.ibb.co/gN2ZZc/Screen_Shot_2018_03_23_at_2_14_45_PM.png" />
