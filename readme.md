@@ -32,7 +32,7 @@ This should seed some data in your tables
 This will give you a server to call the API
 
 <b>Documentation</b>
-
+<br/>
 [Create Inventory]
 
 URL: /api/inventory
@@ -48,6 +48,7 @@ Response:
 400: Inventory with same values exists
 200: Success
 
+<br/><br/>
 [Adjust Inventory]
 
 URL: /api/inventory/adjust
@@ -60,7 +61,7 @@ inventory_status_id: required|integer
 Response:
 400: Validation Error
 204: Success with no content
-
+<br/><br/>
 [Inventory Report]
 
 URL: /api/inventory/report
