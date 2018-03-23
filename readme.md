@@ -1,40 +1,72 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+Installation:
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+1] git clone https://github.com/aldryn-gutierrez/inventory-warehouse.git
 
-## About Laravel
+2] composer install
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+3] copy .env.example file in the root directory and rename it to .env
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+4] Inside the .env file that you just created update this fields to your database credentials:
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
 
-## Learning Laravel
+5] Run in terminal: php artisan key:generate
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+This should update your .env APP_KEY, if not copy the output from the terminal
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+6] Run in terminal: php artisan migrate;
 
-## Contributing
+This should create all the database tables
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+7] Run php artisan db:seed
 
-## Security Vulnerabilities
+This should seed some data in your tables
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+8] Run php artisan serve
 
-## License
+This will give you a server to call the API
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Documentation
+
+[Create Inventory]
+
+URL: /api/inventory
+METHOD: POST
+
+Parameters:
+product_id: required|integer
+distribution_center_id: required|integer
+quantity: required|integer
+
+Response:
+400: Validation Error
+400: Inventory with same values exists
+200: Success
+
+[Adjust Inventory]
+
+URL: /api/inventory/adjust
+METHOD: POST
+
+Parameters:
+inventory_id: required|integer
+inventory_status_id: required|integer
+
+Response:
+400: Validation Error
+204: Success with no content
+
+[Inventory Report]
+
+URL: /api/inventory/report
+METHOD: GET
+
+Response:
+200: Success 
+
+
