@@ -35,39 +35,39 @@ This will give you a server to call the API
 <br/><br/>
 [Create Inventory]
 
-URL: /api/inventory
-METHOD: POST
+URL: /api/inventory<br/>
+METHOD: POST<br/>
 
-Parameters:
-product_id: required|integer
-distribution_center_id: required|integer
-quantity: required|integer
+Parameters:<br/>
+product_id: required|integer<br/>
+distribution_center_id: required|integer<br/>
+quantity: required|integer<br/>
 
-Response:
-400: Validation Error
-400: Inventory with same values exists
-200: Success
+Response:<br/>
+400: Validation Error<br/>
+400: Inventory with same values exists<br/>
+200: Success<br/>
 
 <br/>
 [Adjust Inventory]
 
-URL: /api/inventory/adjust
-METHOD: POST
+URL: /api/inventory/adjust<br/>
+METHOD: POST<br/>
 
-Parameters:
-inventory_id: required|integer
-inventory_status_id: required|integer
+Parameters:<br/>
+inventory_id: required|integer<br/>
+inventory_status_id: required|integer<br/>
 
-Response:
-400: Validation Error
-204: Success with no content
+Response:<br/>
+400: Validation Error<br/>
+204: Success with no content<br/>
 <br/>
 [Inventory Report]
 
-URL: /api/inventory/report
-METHOD: GET
+URL: /api/inventory/report<br/>
+METHOD: GET<br/>
 
-Response:
-200: Success 
+Response:<br/>
+200: Success <br/>
 
 
